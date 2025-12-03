@@ -1,0 +1,31 @@
+// ------------------------------
+// 두근두근 애니메이션
+// ------------------------------
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(0.95); }
+  75% { transform: scale(1.05); }
+}
+
+// 적용 대상
+a, /* 기본 링크 */
+a:visited,
+a:active,
+.nav-item, /* 네비게이션 메뉴 */
+.sidebar a, /* 사이드바 링크 */
+.footer a, /* 푸터 링크 */
+button, /* 버튼 */
+button:hover,
+input[type="submit"] {
+  transition: transform 0.2s ease-in-out;
+}
+
+a:hover,
+.nav-item:hover,
+.sidebar a:hover,
+.footer a:hover,
+button:hover,
+input[type="submit"]:hover {
+  animation: heartbeat 0.6s ease-in-out;
+}
