@@ -33,7 +33,7 @@ plugins:
 author:
   name   : "구준"
   avatar : "/assets/images/profile.jpg"   # 이미지 업로드하면 자동 적용됨
-  bio    : "충남대학교 언론정보학 전공 / 법제, 커뮤니케이션, 문화연구 등을 중심으로 공부합니다."
+  bio    : "충남대학교 언론정보학 전공 - 법제, 커뮤니케이션, 문화연구 등을 중심으로 공부합니다."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -43,7 +43,7 @@ author:
       url: "mailto:koojoon78@gmail.com"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"   # 넣고 싶으면 알려줘
+      url: "https://instagram.com/koooooojoon"   # 넣고 싶으면 알려줘
 
 footer:
   links:
@@ -52,7 +52,7 @@ footer:
       url: "https://github.com/Francis-Paul-0109"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://instagram.com/koooooojoon"
 
 defaults:
   - scope:
