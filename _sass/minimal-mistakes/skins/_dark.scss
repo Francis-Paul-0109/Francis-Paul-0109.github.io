@@ -49,16 +49,17 @@ $footer-link-color: #007B8A;
 $footer-link-hover-color: #D4F0F0;
 
 // 푸터 강제 스타일
-.site-footer {
+footer.site-footer, footer.site-footer * {
   background-color: #ECEAE4 !important;
   color: #333333 !important;
+}
 
-  a {
-    color: #007B8A !important; // 링크
-    &:hover {
-      color: #D4F0F0 !important; // 링크 호버
-    }
-  }
+footer.site-footer a {
+  color: #007B8A !important; // 링크
+}
+
+footer.site-footer a:hover {
+  color: #D4F0F0 !important; // 링크 호버
 }
 
 // ------------------------------
