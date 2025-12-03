@@ -1,12 +1,16 @@
 // ------------------------------
-// Minimal Mistakes 블랙톤 SCSS (통합본)
+// Minimal Mistakes 블랙톤 SCSS (완전 통합본)
 // ------------------------------
 
+// ------------------------------
 // 전체 배경
+// ------------------------------
 $background-color: #121212;
 $body-background-color: #121212;
 
+// ------------------------------
 // 글자 색상
+// ------------------------------
 $body-text-color: #ffffff;
 $heading-color: #ffffff;
 $blockquote-color: #ffffff;
@@ -15,58 +19,36 @@ $blockquote-color: #ffffff;
 $link-color: #ffffff;
 $link-hover-color: #ff9800;
 
+// ------------------------------
 // 헤더/네비게이션
+// ------------------------------
 $header-background: #121212;
 $header-text-color: #ffffff;
 
+// 상단 메뉴 강제 하얀색
+.masthead,
+.masthead a,
+.masthead a:visited {
+  color: #ffffff !important;
+}
+
+// ------------------------------
 // 사이드바
+// ------------------------------
 $sidebar-background: #121212;
 $sidebar-text-color: #ffffff;
 $sidebar-link-color: #ffffff;
 $sidebar-link-hover-color: #ff9800;
 
+// ------------------------------
 // 푸터
+// ------------------------------
 $footer-background: #ECEAE4;
 $footer-text-color: #333333;
 $footer-link-color: #007B8A;
 $footer-link-hover-color: #D4F0F0;
 
-// 코드 블록
-$code-background: #1e1e1e;
-$code-text-color: #ffffff;
-$code-comment-color: #888888;
-$code-keyword-color: #ff9800;
-$code-string-color: #4caf50;
-
-// 테이블
-$table-border-color: #333333;
-$table-header-background: #1f1f1f;
-$table-header-text-color: #ffffff;
-$table-row-background: #1a1a1a;
-$table-row-text-color: #ffffff;
-
-// 강조/하이라이트
-$accent-color: #D4F0F0;
-
-// ==============================
-// 본문 글씨 강제 하얀색
-// ==============================
-body, 
-body p, 
-body li, 
-body blockquote, 
-body h1, 
-body h2, 
-body h3, 
-body h4, 
-body h5, 
-body h6 {
-  color: #ffffff !important;
-}
-
-// ==============================
 // 푸터 강제 스타일
-// ==============================
 .site-footer {
   background-color: #ECEAE4 !important;
   color: #333333 !important;
@@ -77,4 +59,43 @@ body h6 {
       color: #D4F0F0 !important; // 링크 호버
     }
   }
+}
+
+// ------------------------------
+// 코드 블록
+// ------------------------------
+$code-background: #1e1e1e;
+$code-text-color: #ffffff;
+$code-comment-color: #888888;
+$code-keyword-color: #ff9800;
+$code-string-color: #4caf50;
+
+// ------------------------------
+// 테이블
+// ------------------------------
+$table-border-color: #333333;
+$table-header-background: #1f1f1f;
+$table-header-text-color: #ffffff;
+$table-row-background: #1a1a1a;
+$table-row-text-color: #ffffff;
+
+// ------------------------------
+// 강조/하이라이트
+// ------------------------------
+$accent-color: #D4F0F0;
+
+// ------------------------------
+// 본문 글씨 강제 하얀색
+// ------------------------------
+body,
+body p,
+body li,
+body blockquote,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #ffffff !important;
 }
