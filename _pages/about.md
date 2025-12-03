@@ -3,6 +3,6 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
-
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+안녕하세요, 구준입니다. 현재 충남대학교에서 언론정보학을 전공하고 있습니다.
+이 블로그는 저의 개인적이고 사사로운 여러가지 지식들과, 인생을 항해하며 느끼는 것들을 소소하게 풀어낸 공간입니다. 
+평소 관심있는 주제인 철학, 법학, 문화연구등에 관한 여러가지 지식들을 공유합니다. 마음껏 느끼고 즐겨주시면 감사하겠습니다.
