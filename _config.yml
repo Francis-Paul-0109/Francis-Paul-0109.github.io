@@ -31,7 +31,7 @@ plugins:
 
 author:
   name   : "구준"
-  avatar : "/assets/images/profile.jpg"   # 이미지 업로드하면 자동 적용됨
+  avatar : "/assets/images/profile.png"   # 이미지 업로드하면 자동 적용됨
   bio    : "충남대학교 언론정보학 전공"
   links:
     - label: "GitHub"
