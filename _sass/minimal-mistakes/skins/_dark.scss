@@ -58,19 +58,6 @@ $footer-text-color: #333333;
 $footer-link-color: #007B8A;
 $footer-link-hover-color: #D4F0F0;
 
-// 푸터 강제 스타일
-footer.site-footer, footer.site-footer * {
-  background-color: #ECEAE4 !important;
-  color: #333333 !important;
-}
-
-footer.site-footer a {
-  color: #007B8A !important; // 링크
-}
-
-footer.site-footer a:hover {
-  color: #D4F0F0 !important; // 링크 호버
-}
 
 // ------------------------------
 // 코드 블록
@@ -110,3 +97,21 @@ body h5,
 body h6 {
   color: #ffffff !important;
 }
+
+/* ------------------------------
+   푸터 강제 스타일 (완전히 덮어쓰기)
+------------------------------ */
+footer.site-footer,
+footer.site-footer * {
+  background-color: #ECEAE4 !important;
+  color: #333333 !important;
+}
+
+footer.site-footer a {
+  color: #007B8A !important;   // 링크 색
+}
+
+footer.site-footer a:hover {
+  color: #D4F0F0 !important;   // 링크 호버 색
+}
+
