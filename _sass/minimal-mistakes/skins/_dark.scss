@@ -1,10 +1,10 @@
 // ------------------------------
-// Minimal Mistakes 검정톤 SCSS (글자 하얀색)
+// Minimal Mistakes 블랙톤 SCSS (완전 흰색 텍스트)
 // ------------------------------
 
 // 전체 배경
-$background-color: #000000;
-$body-background-color: #000000;
+$background-color: #121212;
+$body-background-color: #121212;
 
 // 글자 색상
 $body-text-color: #ffffff;
@@ -12,37 +12,37 @@ $heading-color: #ffffff;
 $blockquote-color: #ffffff;
 
 // 링크 색상
-$link-color: #ff9800;
-$link-hover-color: #ffc107;
+$link-color: #ffffff;
+$link-hover-color: #ff9800;
 
 // 헤더/네비게이션
-$header-background: #000000;
+$header-background: #121212;
 $header-text-color: #ffffff;
 
 // 사이드바
-$sidebar-background: #000000;
+$sidebar-background: #121212;
 $sidebar-text-color: #ffffff;
-$sidebar-link-color: #ff9800;
-$sidebar-link-hover-color: #ffc107;
+$sidebar-link-color: #ffffff;
+$sidebar-link-hover-color: #ff9800;
 
 // 푸터
-$footer-background: #000000;
+$footer-background: #121212;
 $footer-text-color: #ffffff;
-$footer-link-color: #ff9800;
-$footer-link-hover-color: #ffc107;
+$footer-link-color: #ffffff;
+$footer-link-hover-color: #ff9800;
 
 // 코드 블록
-$code-background: #1e1e1e; // 코드 배경은 살짝 어둡게 유지
+$code-background: #1e1e1e;
 $code-text-color: #ffffff;
-$code-comment-color: #ffffff;
+$code-comment-color: #888888;
 $code-keyword-color: #ff9800;
 $code-string-color: #4caf50;
 
 // 테이블
-$table-border-color: #ffffff;
-$table-header-background: #000000;
+$table-border-color: #333333;
+$table-header-background: #1f1f1f;
 $table-header-text-color: #ffffff;
-$table-row-background: #000000;
+$table-row-background: #1a1a1a;
 $table-row-text-color: #ffffff;
 
 // 강조/하이라이트
