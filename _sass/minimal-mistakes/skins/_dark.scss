@@ -1,5 +1,5 @@
 // ------------------------------
-// Minimal Mistakes 블랙톤 SCSS (완전 하얀 텍스트 + 하늘 강조 + 푸터 수정)
+// Minimal Mistakes 블랙톤 SCSS (통합본)
 // ------------------------------
 
 // 전체 배경
@@ -12,8 +12,8 @@ $heading-color: #ffffff;
 $blockquote-color: #ffffff;
 
 // 링크 색상
-$link-color: #D4F0F0;        // 강조 하늘색
-$link-hover-color: #ffffff;   // 흰색으로 호버 시 반전
+$link-color: #ffffff;
+$link-hover-color: #ff9800;
 
 // 헤더/네비게이션
 $header-background: #121212;
@@ -22,14 +22,14 @@ $header-text-color: #ffffff;
 // 사이드바
 $sidebar-background: #121212;
 $sidebar-text-color: #ffffff;
-$sidebar-link-color: #D4F0F0;
-$sidebar-link-hover-color: #ffffff;
+$sidebar-link-color: #ffffff;
+$sidebar-link-hover-color: #ff9800;
 
 // 푸터
-$footer-background: #ECEAE4;   // 연한 크림색
-$footer-text-color: #333333;   // 진한 회색 글씨
-$footer-link-color: #007B8A;   // 진한 하늘색
-$footer-link-hover-color: #D4F0F0; // 마우스 오버 시 강조 하늘색
+$footer-background: #ECEAE4;
+$footer-text-color: #333333;
+$footer-link-color: #007B8A;
+$footer-link-hover-color: #D4F0F0;
 
 // 코드 블록
 $code-background: #1e1e1e;
@@ -47,3 +47,34 @@ $table-row-text-color: #ffffff;
 
 // 강조/하이라이트
 $accent-color: #D4F0F0;
+
+// ==============================
+// 본문 글씨 강제 하얀색
+// ==============================
+body, 
+body p, 
+body li, 
+body blockquote, 
+body h1, 
+body h2, 
+body h3, 
+body h4, 
+body h5, 
+body h6 {
+  color: #ffffff !important;
+}
+
+// ==============================
+// 푸터 강제 스타일
+// ==============================
+.site-footer {
+  background-color: #ECEAE4 !important;
+  color: #333333 !important;
+
+  a {
+    color: #007B8A !important; // 링크
+    &:hover {
+      color: #D4F0F0 !important; // 링크 호버
+    }
+  }
+}
