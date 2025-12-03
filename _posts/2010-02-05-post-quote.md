@@ -2,6 +2,7 @@
 title: "Post: Quote"
 categories:
   - Blog
+published: false
 tags:
   - Post Formats
   - quote
