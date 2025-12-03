@@ -1,4 +1,4 @@
-title: 구준 Archive
+title: Francis Paul Archive
 email: koojoon78@gmail.com
 
 description: >-
@@ -33,7 +33,7 @@ plugins:
 author:
   name   : "구준"
   avatar : "/assets/images/profile.jpg"   # 이미지 업로드하면 자동 적용됨
-  bio    : "충남대학교 언론정보학 전공 - 법제, 커뮤니케이션, 문화연구 등을 중심으로 공부합니다."
+  bio    : "충남대학교 언론정보학 전공"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
