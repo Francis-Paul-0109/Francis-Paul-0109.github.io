@@ -1,27 +1,22 @@
 // ==========================================================================
-// CUSTOM DARK THEME + ANIMATIONS
+// CUSTOM DARK THEME + HEARTBEAT 지속 애니메이션
 // ==========================================================================
 
 // ------------------------------
-// 색상 조정
+// hover 시 heartbeat 적용
 // ------------------------------
-$body-text-color: #ffffff !default;
-$heading-color: #ffffff !default;
-$blockquote-color: #ffffff !default;
-
-$link-color: #ff9800 !default;
-$link-hover-color: #ffc107 !default;
-
-$sidebar-text-color: #ffffff !default;
-$sidebar-link-color: #ff9800 !default;
-$sidebar-link-hover-color: #ffc107 !default;
-
-$footer-text-color: #ffffff !default;
-$footer-link-color: #ff9800 !default;
-$footer-link-hover-color: #ffc107 !default;
+a:hover, 
+.sidebar a:hover, 
+.footer a:hover, 
+.nav a:hover {
+  -webkit-animation: heartbeat 1s ease-in-out infinite; // 무한 반복
+  animation: heartbeat 1s ease-in-out infinite;
+  color: #ff4444 !important;  // 뛰는 동안 빨간색
+  text-decoration: none !important; // 밑줄 제거
+}
 
 // ------------------------------
-// 애니메이션
+// heartbeat 애니메이션
 // ------------------------------
 @-webkit-keyframes heartbeat {
   0% { transform: scale(1); }
@@ -37,16 +32,4 @@ $footer-link-hover-color: #ffc107 !default;
   50% { transform: scale(1); }
   75% { transform: scale(1.15); }
   100% { transform: scale(1); }
-}
-
-// ------------------------------
-// hover 시 heartbeat 적용
-// ------------------------------
-a:hover, 
-.sidebar a:hover, 
-.footer a:hover, 
-.nav a:hover {
-  -webkit-animation: heartbeat 0.6s ease-in-out;
-  animation: heartbeat 0.6s ease-in-out;
-  color: $link-hover-color !important;
 }
