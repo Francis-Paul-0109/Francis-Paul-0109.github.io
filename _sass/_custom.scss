@@ -1,31 +1,52 @@
+// ==========================================================================
+// CUSTOM DARK THEME + ANIMATIONS
+// ==========================================================================
+
 // ------------------------------
-// 두근두근 애니메이션
+// 색상 조정
 // ------------------------------
+$body-text-color: #ffffff !default;
+$heading-color: #ffffff !default;
+$blockquote-color: #ffffff !default;
+
+$link-color: #ff9800 !default;
+$link-hover-color: #ffc107 !default;
+
+$sidebar-text-color: #ffffff !default;
+$sidebar-link-color: #ff9800 !default;
+$sidebar-link-hover-color: #ffc107 !default;
+
+$footer-text-color: #ffffff !default;
+$footer-link-color: #ff9800 !default;
+$footer-link-hover-color: #ffc107 !default;
+
+// ------------------------------
+// 애니메이션
+// ------------------------------
+@-webkit-keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
 @keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  25% { transform: scale(1.1); }
-  50% { transform: scale(0.95); }
-  75% { transform: scale(1.05); }
+  0% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
 
-// 적용 대상
-a, /* 기본 링크 */
-a:visited,
-a:active,
-.nav-item, /* 네비게이션 메뉴 */
-.sidebar a, /* 사이드바 링크 */
-.footer a, /* 푸터 링크 */
-button, /* 버튼 */
-button:hover,
-input[type="submit"] {
-  transition: transform 0.2s ease-in-out;
-}
-
-a:hover,
-.nav-item:hover,
-.sidebar a:hover,
-.footer a:hover,
-button:hover,
-input[type="submit"]:hover {
+// ------------------------------
+// hover 시 heartbeat 적용
+// ------------------------------
+a:hover, 
+.sidebar a:hover, 
+.footer a:hover, 
+.nav a:hover {
+  -webkit-animation: heartbeat 0.6s ease-in-out;
   animation: heartbeat 0.6s ease-in-out;
+  color: $link-hover-color !important;
 }
