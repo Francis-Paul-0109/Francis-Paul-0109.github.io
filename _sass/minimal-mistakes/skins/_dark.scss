@@ -1,5 +1,5 @@
 // ------------------------------
-// Minimal Mistakes 블랙톤 SCSS (완전 흰색 텍스트)
+// Minimal Mistakes 블랙톤 SCSS (완전 흰색 텍스트 + 하늘색 강조)
 // ------------------------------
 
 // 전체 배경
@@ -46,4 +46,18 @@ $table-row-background: #1a1a1a;
 $table-row-text-color: #ffffff;
 
 // 강조/하이라이트
-$accent-color: #ff9800;
+$accent-color: #D4F0F0;
+
+// ==============================
+// 글씨 색 강제 적용
+// ==============================
+body,
+body a,
+h1, h2, h3, h4, h5, h6,
+p, li, blockquote,
+td, th, code, pre,
+.site-title, .site-description,
+.sidebar a, .footer a,
+.search-toggle, .search-form input, .search-form button {
+  color: #ffffff !important;
+}
