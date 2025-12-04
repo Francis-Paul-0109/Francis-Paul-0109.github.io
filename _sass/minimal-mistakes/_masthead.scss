@@ -8,7 +8,7 @@
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.15s;
-  animation-delay: 1s;
+  animation-delay: 0.75s;
   z-index: 20;
 
   &__inner-wrap {
@@ -54,7 +54,7 @@
 
 .site-subtitle {
   display: block;
-  font-size: $type-size-6;
+  font-size: $type-size-5;
 }
 
 .masthead__menu {
