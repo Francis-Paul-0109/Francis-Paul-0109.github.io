@@ -34,12 +34,12 @@ $header-text-color: #ffffff;
 
 // 상단 메뉴 호버 시 크기 확대 애니메이션
 .masthead a {
-  transition: transform 2s ease-in-out; // 부드럽게
+  transition: transform 3s ease-in-out; // 부드럽게
   display: inline-block; // transform 적용을 위해 필요
 }
 
 .masthead a:hover {
-  transform: scale(1.2); // 20% 확대
+  transform: scale(1.75); // 17.5% 확대
 }
 
 // ------------------------------
