@@ -103,9 +103,18 @@ body h5,
 body h6 {
   color: #37353E !important;
 }
-
+/* masthead 텍스트만 커스텀 폰트 적용 */
 .masthead,
-.masthead * {
+.masthead a,
+.masthead nav,
+.masthead .site-title {
   font-family: "MyHeaderFont", sans-serif !important;
 }
 
+/* 아이콘(font-awesome)은 기본 폰트로 복구 */
+.masthead .fa,
+.masthead .fas,
+.masthead .far,
+.masthead .fab {
+  font-family: "Font Awesome 5 Free" !important;
+}
