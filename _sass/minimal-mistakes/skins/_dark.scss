@@ -132,3 +132,15 @@ body h6 {
   font-weight: 300 !important;   // ultra-light 느낌
   letter-spacing: -0.5px;        // 좀 더 단정하게
 }
+/* ------------------------------------------------------ */
+/* 사이트 제목 폰트 얇게 강제 적용 (최후 우선순위) */
+/* ------------------------------------------------------ */
+
+.masthead .site-title,
+.masthead .site-title a {
+  font-family: "MyHeaderFont", sans-serif !important;
+  font-weight: 300 !important;         /* ultra light */
+  letter-spacing: 0.1px !important;    /* 얇은 폰트는 좁게 잡을수록 균형 좋음 */
+  line-height: 1.1;
+}
+
