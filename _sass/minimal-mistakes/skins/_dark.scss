@@ -11,25 +11,25 @@ $body-background-color: #EFECE3;
 // ------------------------------
 // 글자 색상
 // ------------------------------
-$body-text-color: #ffffff;
-$heading-color: #ffffff;
-$blockquote-color: #ffffff;
+$body-text-color: #37353E;
+$heading-color: #37353E;
+$blockquote-color: #37353E;
 
 // 링크 색상
-$link-color: #ffffff;
+$link-color: #37353E;
 $link-hover-color: #ff9800;
 
 // ------------------------------
 // 헤더/네비게이션
 // ------------------------------
 $header-background: #EFECE3;
-$header-text-color: #ffffff;
+$header-text-color: #37353E;
 
 // 상단 메뉴 강제 하얀색
 .masthead,
 .masthead a,
 .masthead a:visited {
-  color: #ffffff !important;
+  color: #37353E !important;
 }
 
 // 상단 메뉴 호버 시 크기 확대 애니메이션
@@ -46,8 +46,8 @@ $header-text-color: #ffffff;
 // 사이드바
 // ------------------------------
 $sidebar-background: #EFECE3;
-$sidebar-text-color: #ffffff;
-$sidebar-link-color: #ffffff;
+$sidebar-text-color: #37353E;
+$sidebar-link-color: #37353E;
 $sidebar-link-hover-color: #ff9800;
 
 // ------------------------------
@@ -63,7 +63,7 @@ $footer-link-hover-color: #D4F0F0;
 // 코드 블록
 // ------------------------------
 $code-background: #1e1e1e;
-$code-text-color: #ffffff;
+$code-text-color: #37353E;
 $code-comment-color: #888888;
 $code-keyword-color: #ff9800;
 $code-string-color: #4caf50;
@@ -73,9 +73,9 @@ $code-string-color: #4caf50;
 // ------------------------------
 $table-border-color: #333333;
 $table-header-background: #1f1f1f;
-$table-header-text-color: #ffffff;
+$table-header-text-color: #37353E;
 $table-row-background: #1a1a1a;
-$table-row-text-color: #ffffff;
+$table-row-text-color: #37353E;
 
 // ------------------------------
 // 강조/하이라이트
@@ -95,7 +95,7 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  color: #ffffff !important;
+  color: #37353E !important;
 }
 
 
