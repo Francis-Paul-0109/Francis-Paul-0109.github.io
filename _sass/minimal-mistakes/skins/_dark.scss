@@ -39,7 +39,7 @@ $header-text-color: #ffffff;
 }
 
 .masthead a:hover {
-  transform: scale(1.75); // 17.5% 확대
+  transform: scale(1.15); // 10.5% 확대
 }
 
 // ------------------------------
@@ -53,10 +53,10 @@ $sidebar-link-hover-color: #ff9800;
 // ------------------------------
 // 푸터
 // ------------------------------
-$footer-background: #ECEAE4;
-$footer-text-color: #333333;
-$footer-link-color: #007B8A;
-$footer-link-hover-color: #D4F0F0;
+$footer-background: #ECEAE4; !important;
+$footer-text-color: #333333; !important;
+$footer-link-color: #007B8A; !important;
+$footer-link-hover-color: #D4F0F0; !important;
 
 
 // ------------------------------
@@ -98,20 +98,4 @@ body h6 {
   color: #ffffff !important;
 }
 
-/* ------------------------------
-   푸터 강제 스타일 (완전히 덮어쓰기)
------------------------------- */
-footer.site-footer,
-footer.site-footer * {
-  background-color: #ECEAE4 !important;
-  color: #333333 !important;
-}
-
-footer.site-footer a {
-  color: #007B8A !important;   // 링크 색
-}
-
-footer.site-footer a:hover {
-  color: #D4F0F0 !important;   // 링크 호버 색
-}
 
