@@ -121,3 +121,9 @@ body h6 {
 .masthead .fab {
   font-family: "Font Awesome 5 Free" !important;
 }
+/* masthead 전체 글씨 크기 조절 */
+.masthead a,
+.masthead nav,
+.masthead .site-title {
+  font-size: 1.1rem !important;  // 원하는 크기로 조절
+}
