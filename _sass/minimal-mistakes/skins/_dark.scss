@@ -1,6 +1,12 @@
 // ------------------------------
 // Minimal Mistakes 블랙톤 SCSS (완전 통합본)
 // ------------------------------
+@font-face {
+  font-family: "MyHeaderFont";
+  src: url("/assets/fonts/KoPubWorldDotum_ProLight.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
 
 // ------------------------------
 // 전체 배경
