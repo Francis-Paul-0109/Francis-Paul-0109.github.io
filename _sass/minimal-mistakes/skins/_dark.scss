@@ -127,3 +127,8 @@ body h6 {
 .masthead .site-title {
   font-size: 1.1rem !important;  // 원하는 크기로 조절
 }
+/* 블로그 제목만 가볍게 만들기 */
+.masthead .site-title {
+  font-weight: 300 !important;   // ultra-light 느낌
+  letter-spacing: -0.5px;        // 좀 더 단정하게
+}
