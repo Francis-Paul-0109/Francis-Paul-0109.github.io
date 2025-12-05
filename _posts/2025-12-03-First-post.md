@@ -9,7 +9,7 @@ background_color: "#c7b199"
 text_color: "#1A1A1A"
 text_width: "90%"
 text_margin_left: "15%"
-text_padding_top: "1vh"
+text_padding_top: "0vh"
 ---
 
 <section class="auto-scrolly">
