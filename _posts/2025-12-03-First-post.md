@@ -58,3 +58,61 @@ background_color: "#c7b199"
   </div>
 
 </section>
+
+<style>
+.fixed-image {
+position: fixed;
+top: 50%;
+left: 5%;
+transform: translateY(-50%);
+width: 35%;
+max-width: 400px;
+z-index: 5;
+}.fixed-image img {
+width: 100%;
+opacity: 1;
+transition: opacity 1s ease-in-out;
+}/* 텍스트 영역을 더 중앙쪽으로 이동 */
+.scrolly-text {
+width: 80%;
+margin-left: 20%;
+padding-top: 0vh;
+}.step {
+opacity: 1;
+  margin: 30px 0;
+  margin: 10px 0;
+font-size: 1.2rem;
+line-height: 1.7;
+white-space: pre-line;
+}.step.fade-out {
+opacity: 0;
+transition: opacity 1s ease-in-out;
+}</style>
+<script>
+const steps = document.querySelectorAll(".step");
+const img = document.getElementById("auto-img");
+let currentIndex = 0;
+// 초기 설정
+steps.forEach((step, i) => {
+if (i !== 0) step.classList.add("fade-out");
+});
+img.dataset.current = steps[0].dataset.img;
+// 스크롤 이벤트
+document.addEventListener("scroll", () => {
+let index = 0;
+steps.forEach((step, i) => {
+const rect = step.getBoundingClientRect();
+if (rect.top < window.innerHeight * 0.45) index = i;
+});
+if (index !== currentIndex) {
+// 이전 step fade out
+steps[currentIndex].classList.add("fade-out");
+// 새로운 step fade in
+steps[index].classList.remove("fade-out");
+// 이미지 변경
+const newImg = steps[index].dataset.img;
+if (img.dataset.current !== newImg) {
+img.dataset.current = newImg;
+img.style.opacity = 0;
+setTimeout(() => {
+img.src = `/assets/images/post/1.기록에관해/${newImg}`;
