@@ -43,6 +43,7 @@ background-color: "#C7B1993"  # 포스트별 배경색 변경 가능
     <div class="step" data-img="4. hand.jpg">
       앞으로 여러 작업물이 생겨나는데로 업로드해보겠습니다.
       다들 늘 이유없는 성실함이 주변을 에워싸길 기원합니다.
+      (제 엄지손가락을 받으십쇼)
     </div>
   </div>
 
@@ -67,8 +68,8 @@ background-color: "#C7B1993"  # 포스트별 배경색 변경 가능
 
 /* 텍스트 영역을 더 중앙쪽으로 이동 */
 .scrolly-text {
-  width: 60%;
-  margin-left: 30%; /* 기존 45% → 40%로 조정 */
+  width: 100%;
+  margin-left: 20%; /* 기존 45% → 40%로 조정 */
   padding-top: 10vh;
 }
 
