@@ -40,7 +40,7 @@ background-color: "#C7B1993"  # 포스트별 배경색 변경 가능
       다만 단점이자 장점이 있다면 마크다운이라는 경량 마크업 언어를 사용한다는 점이 처음 사용하는 사람에게는 조금 난이도를 높이는 요소가 될 수 있을 것 같았습니다.
     </div>
 
-    <div class="step" data-img="2. fountain pen.jpg">
+    <div class="step" data-img="4. hand.jpg">
       앞으로 여러 작업물이 생겨나는데로 업로드해보겠습니다.
       다들 늘 이유없는 성실함이 주변을 에워싸길 기원합니다.
     </div>
@@ -67,8 +67,8 @@ background-color: "#C7B1993"  # 포스트별 배경색 변경 가능
 
 /* 텍스트 영역을 더 중앙쪽으로 이동 */
 .scrolly-text {
-  width: 55%;
-  margin-left: 40%; /* 기존 45% → 40%로 조정 */
+  width: 60%;
+  margin-left: 30%; /* 기존 45% → 40%로 조정 */
   padding-top: 10vh;
 }
 
