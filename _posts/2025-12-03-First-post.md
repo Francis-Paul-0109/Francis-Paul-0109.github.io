@@ -14,7 +14,7 @@ background-color: "#C7B199"  # 포스트별 배경색 변경 가능
   <!-- 우측 본문 -->
   <div class="scrolly-text">
     <div class="step" data-img="1. github.png">
-      Github 블로그를 시작하게 된 이유
+      <em><strong>1. Github 블로그를 시작하게 된 이유</strong></em>
       사실 그렇게 큰 이유가 있지는 않습니다.
       이번 학기 온라인 저널리즘이라는 강의를 수강하게 되었고, 그 과정에서 포트폴리오를 만들게 되었습니다.
       개인 웹호스팅 서비스를 여러모로 찾아보았으나, 저의 필요에 적합한 서비스를 찾을 수 없었습니다.
@@ -22,7 +22,7 @@ background-color: "#C7B199"  # 포스트별 배경색 변경 가능
     </div>
 
     <div class="step" data-img="2. fountain pen.jpg">
-      블로그는 삶의 기록이다
+      <em><strong>2. 블로그는 삶의 기록이다</strong></em>
       교수님께서 강의 중 늘 강조하셨던 이야기 중 하나가 바로 블로그입니다.
       특히나 커뮤니케이션을 전공하는 학부생이라면 안하는 것이 범죄(매우 다소 의역)라 하셨는데요.
       이는 어떻게 보면 자신을 어필하는 요소이자 특히나 마케팅분야로 많이 진출하는 학과의 특성상 당연한 이야기였습니다.
@@ -30,7 +30,7 @@ background-color: "#C7B199"  # 포스트별 배경색 변경 가능
     </div>
 
     <div class="step" data-img="3. css coding.jpg">
-      Github는 무엇인가?
+      <em><strong>3. Github는 무엇인가?</strong></em>
       github는 마이크로소프트 산하의 서비스입니다.
       git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템을 활용합니다.
       이런 github는 개발자들 상호간 소스코드를 직접 공유하지 않고도, git을 통해 하나의 프로젝트, 같은 파일에 대해 여려명이 동시에 작업을 할 수 있도록 도와줍니다.
@@ -69,7 +69,7 @@ background-color: "#C7B199"  # 포스트별 배경색 변경 가능
 /* 텍스트 영역을 더 중앙쪽으로 이동 */
 .scrolly-text {
   width: 100%;
-  margin-left: 20%; /* 기존 45% → 40%로 조정 */
+  margin-left: 10%; /* 기존 45% → 40%로 조정 */
   padding-top: 10vh;
 }
 
