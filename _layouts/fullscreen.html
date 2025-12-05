@@ -13,7 +13,7 @@ layout: none
       padding: 0;
       font-family: "MyHeaderFont", sans-serif;
       overflow-x: hidden;
-      transition: background 0.5s ease; /* 배경색 페이드 */
+      transition: background 0.5s ease;
     }
 
     /* 좌측 고정 이미지 */
@@ -31,7 +31,7 @@ layout: none
     .fixed-image img {
       width: 100%;
       border-radius: 8px;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
     }
 
     /* 우측 스크롤 텍스트 */
@@ -43,18 +43,23 @@ layout: none
       font-size: 1.15rem;
       line-height: 1.7;
       white-space: pre-line;
-      color: #37353E; /* 기본 텍스트 색상 */
+      color: {% if page.text_color %}{{ page.text_color }}{% else %}#37353E{% endif %} !important;
     }
 
-    /* 스텝 텍스트 페이드 */
+    /* 스텝 텍스트 페이드 (opacity 제거, transform 사용) */
     .step {
-      opacity: 1; /* 기본은 뚜렷하게 표시 */
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.5s ease-out;
       margin-bottom: 4rem;
-      transition: opacity 1s ease-out;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      white-space: pre-line;
     }
 
-    .step.fade-out {
-      opacity: 0;
+    .step.active {
+      visibility: visible;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -66,24 +71,22 @@ layout: none
     <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png">
   </div>
 
-  <!-- 우측 스크롤 본문, 포스트별 text_color 적용 -->
-  <div class="scrolly-text" {% if page.text_color %}style="color: {{ page.text_color }};"{% endif %}>
+  <!-- 우측 스크롤 본문 -->
+  <div class="scrolly-text">
     {{ content }}
   </div>
 
-  <!-- JS: 이미지 페이드 + 텍스트 페이드 -->
   <script>
     const steps = document.querySelectorAll(".step");
     const img = document.getElementById("auto-img");
     let currentIndex = 0;
 
-    // 초기 설정: 첫 번째 제외 나머지 fade-out 적용
+    // 초기 설정: 첫 번째 스텝만 활성화
     steps.forEach((step, i) => {
-      if (i !== 0) step.classList.add("fade-out");
+      if (i === 0) step.classList.add("active");
     });
     img.dataset.current = steps[0].dataset.img;
 
-    // 스크롤 이벤트
     document.addEventListener("scroll", () => {
       let index = 0;
       steps.forEach((step, i) => {
@@ -92,13 +95,13 @@ layout: none
       });
 
       if (index !== currentIndex) {
-        // 이전 step fade out
-        steps[currentIndex].classList.add("fade-out");
+        // 이전 step 비활성화
+        steps[currentIndex].classList.remove("active");
 
-        // 새로운 step fade in
-        steps[index].classList.remove("fade-out");
+        // 새로운 step 활성화
+        steps[index].classList.add("active");
 
-        // 이미지 변경 + 페이드
+        // 이미지 변경
         const newImg = steps[index].dataset.img;
         if (img.dataset.current !== newImg) {
           img.dataset.current = newImg;
@@ -113,6 +116,5 @@ layout: none
       }
     });
   </script>
-
 </body>
 </html>
