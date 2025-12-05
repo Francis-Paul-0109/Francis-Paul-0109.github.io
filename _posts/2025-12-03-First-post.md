@@ -5,7 +5,7 @@ layout: fullscreen
 sidebar: false
 footer: false
 masthead: false
-background-color: "#EFECE3"  # 포스트별 배경색 변경 가능
+background-color: "9f8473"  # 포스트별 배경색 변경 가능
 ---
 
 <!-- 🎬 전체 래퍼 -->
