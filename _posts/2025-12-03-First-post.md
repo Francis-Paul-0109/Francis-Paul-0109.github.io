@@ -12,6 +12,18 @@ text_color: "#1A1A1A"
 <section class="auto-scrolly">
 
   <div class="scrolly-text">
+    <div class="scrolly-text" style="
+      width: 80%;       /* 본문 폭 */
+      margin-left: 20%; /* 왼쪽 여백 */
+      padding-top: 1vh; /* 위쪽 여백 */
+      line-height: 1.8; /* 줄 간격 */
+      font-size: 1.2rem; /* 글자 크기 */
+      color: {{ page.text_color }};">
+  <div class="step" data-img="1. github.png">
+    ...
+  </div>
+  ...
+</div>
     <div class="step" data-img="1. github.png">
       <em><strong>1. Github 블로그를 시작하게 된 이유</strong></em>
       사실 그렇게 큰 이유가 있지는 않습니다.
