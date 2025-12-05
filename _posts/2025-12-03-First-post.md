@@ -11,10 +11,6 @@ background-color: "#EFECE3"  # 포스트별 배경색 변경 가능
 <!-- 🎬 전체 래퍼 -->
 <section class="auto-scrolly">
 
-  <!-- 🔥 좌측 고정 이미지 -->
-  <div class="fixed-image">
-    <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png">
-  </div>
 
   <!-- 🔥 우측 스크롤 본문 -->
   <div class="scrolly-text">
