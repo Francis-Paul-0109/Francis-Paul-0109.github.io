@@ -5,27 +5,23 @@ layout: single
 sidebar: false
 ---
 
-<!-- 🎬 스크롤텔링 전체 래퍼 -->
+<!-- 🎬 전체 래퍼 -->
 <section class="auto-scrolly">
 
-  <!-- 좌측 고정 이미지 -->
-  <div class="scrolly-graphic">
-    <img id="auto-img" class="fade-img" src="/assets/images/post/1.기록에관해/1. github.png">
+  <!-- 🔥 상단 고정 이미지 -->
+  <div class="fixed-image">
+    <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png">
   </div>
 
-  <!-- 우측 스크롤 텍스트 -->
+  <!-- 🔥 스크롤 본문 -->
   <div class="scrolly-text">
 
-    <!-- STEP 1 -->
     <div class="step" data-img="1. github.png" data-text="Github 블로그를 시작하게 된 이유"></div>
 
-    <!-- STEP 2 -->
     <div class="step" data-img="2. fountain pen.jpg" data-text="블로그는 삶의 기록이다"></div>
 
-    <!-- STEP 3 -->
     <div class="step" data-img="3. css coding.jpg" data-text="Github는 무엇인가?"></div>
 
-    <!-- 🔥 원문 (절대 수정 없음) -->
     <div class="step" data-img="1. github.png" data-text="
 안녕하세요, 구준입니다.
 
@@ -69,48 +65,69 @@ git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사�
   </div>
 </section>
 
-<!-- 🎬 스타일 (이미지 페이드 + 텍스트 페이드인) -->
+<!-- 🎨 STYLE -->
 <style>
-.fade-img {
-  transition: opacity 0.6s ease-in-out;
+/* 화면 상단 중앙 고정 이미지 */
+.fixed-image {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  z-index: 5;
+  text-align: center;
 }
+.fixed-image img {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+/* 본문 */
+.scrolly-text {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 70vh; /* 이미지 아래에서 시작하도록 */
+}
+
 .step {
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
+  margin: 120px 0;
+  opacity: 0.2;
   min-height: 80vh;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  white-space: pre-line; /* 줄바꿈 유지 */
+  font-size: 1.2rem;
+  line-height: 1.7;
+  white-space: pre-line;
+  transition: opacity 0.4s ease;
 }
 .step.active {
   opacity: 1;
 }
-.typewriter {
-  opacity: 1 !important;
-}
 </style>
 
-<!-- 🎬 스크립트 (이미지 페이드 + 텍스트 타이핑) -->
+<!-- 🎬 스크립트 -->
 <script>
 document.addEventListener("scroll", function () {
-  const steps = document.querySelectorAll(".auto-scrolly .step");
+  const steps = document.querySelectorAll(".step");
   const img = document.getElementById("auto-img");
 
   let index = 0;
 
   steps.forEach((step, i) => {
     const rect = step.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.55) index = i;
+    if (rect.top < window.innerHeight * 0.45) index = i;
   });
 
   const active = steps[index];
 
+  // 텍스트 활성화
   steps.forEach(step => step.classList.remove("active"));
   active.classList.add("active");
 
-  /* 🔥 이미지 페이드 */
+  // 이미지 변경
   const newImg = active.dataset.img;
-  if (newImg) {
+  if (img.dataset.current !== newImg) {
+    img.dataset.current = newImg;
     img.style.opacity = 0;
     setTimeout(() => {
       img.src = `/assets/images/post/1.기록에관해/${newImg}`;
@@ -118,12 +135,12 @@ document.addEventListener("scroll", function () {
     }, 300);
   }
 
-  /* 🔥 텍스트 타이핑 효과 */
+  // 텍스트 타이핑 (1번만 실행)
   if (!active.dataset.done) {
     const text = active.dataset.text.trim();
+    active.dataset.done = "true";
     active.innerHTML = "";
     let i = 0;
-    active.dataset.done = "true";
 
     function type() {
       if (i < text.length) {
