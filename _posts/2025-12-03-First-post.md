@@ -5,7 +5,7 @@ layout: fullscreen
 sidebar: false
 footer: false
 masthead: false
-background-color:#C7B199  
+background-color: #C7B199  
 ---
 
 <section class="auto-scrolly">
