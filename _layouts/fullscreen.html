@@ -7,13 +7,13 @@ layout: none
 <head>
   {% include head.html %}
   <style>
+    /* 전체 body */
     body {
       margin: 0;
       padding: 0;
       font-family: "MyHeaderFont", sans-serif;
       overflow-x: hidden;
       transition: background 0.5s ease; /* 배경색 페이드 */
-      <body {% if page.background-color %}style="background-color: {{ page.background-color }};"{% endif %}>
     }
 
     /* 좌측 고정 이미지 */
@@ -59,7 +59,8 @@ layout: none
   </style>
 </head>
 
-<body {% if page.background %}style="background: {{ page.background }};"{% endif %}>
+<!-- body는 한 번만 작성, front matter에서 지정한 background-color 적용 -->
+<body {% if page.background-color %}style="background-color: {{ page.background-color }};"{% endif %}>
 
   <!-- 좌측 고정 이미지 -->
   <div class="fixed-image">
@@ -73,36 +74,46 @@ layout: none
 
   <!-- JS: 이미지 페이드 + 텍스트 페이드 -->
   <script>
-    document.addEventListener("scroll", function () {
-      const steps = document.querySelectorAll(".step");
-      const img = document.getElementById("auto-img");
-      let index = 0;
+    const steps = document.querySelectorAll(".step");
+    const img = document.getElementById("auto-img");
+    let currentIndex = 0;
 
+    // 초기 설정
+    steps.forEach((step, i) => {
+      if (i !== 0) step.classList.add("fade-out");
+    });
+    img.dataset.current = steps[0].dataset.img;
+
+    // 스크롤 이벤트
+    document.addEventListener("scroll", () => {
+      let index = 0;
       steps.forEach((step, i) => {
         const rect = step.getBoundingClientRect();
         if (rect.top < window.innerHeight * 0.45) index = i;
       });
 
-      const active = steps[index];
+      if (index !== currentIndex) {
+        // 이전 step fade out
+        steps[currentIndex].classList.add("fade-out");
 
-      // 텍스트 활성화
-      steps.forEach(step => step.classList.remove("active"));
-      active.classList.add("active");
+        // 새로운 step fade in
+        steps[index].classList.remove("fade-out");
 
-      // 이미지 변경 + 페이드
-      const newImg = active.dataset.img;
-      if (img.dataset.current !== newImg) {
-        img.dataset.current = newImg;
-        img.style.opacity = 0;
-        setTimeout(() => {
-          img.src = `/assets/images/post/1.기록에관해/${newImg}`;
-          img.style.opacity = 1;
-        }, 300);
+        // 이미지 변경 + 페이드
+        const newImg = steps[index].dataset.img;
+        if (img.dataset.current !== newImg) {
+          img.dataset.current = newImg;
+          img.style.opacity = 0;
+          setTimeout(() => {
+            img.src = `/assets/images/post/1.기록에관해/${newImg}`;
+            img.style.opacity = 1;
+          }, 500); // 페이드 트랜지션 살짝 느리게
+        }
+
+        currentIndex = index;
       }
     });
   </script>
 
 </body>
-  <body {% if page.background-color %}style="background-color: {{ page.background-color }};"{% endif %}>
-
 </html>
