@@ -80,3 +80,7 @@ tag_archive:
   type: liquid
   path: /tags/
 
+# Custom scripts
+scripts:
+  - /assets/js/custom.js
+
