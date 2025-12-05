@@ -4,6 +4,29 @@ categories: blog
 layout: single
 ---
 
+<!-- Scrollytelling 시작 -->
+<section class="scrolly">
+  <div class="scrolly-graphic">
+    <img id="scrolly-img" src="/assets/images/post/1.기록에관해/1. github.png">
+  </div>
+
+  <div class="scrolly-text">
+    <div class="step" data-img="1. github.png">
+      Github 블로그를 시작하게 된 이유
+    </div>
+
+    <div class="step" data-img="2. fountain pen.jpg">
+      블로그는 삶의 기록이다
+    </div>
+
+    <div class="step" data-img="3. css coding.jpg">
+      Github는 무엇인가?
+    </div>
+  </div>
+</section>
+<!-- Scrollytelling 끝 -->
+
+
 안녕하세요, 구준입니다.
 
 이 글은 github Minimal Mistakes 블로그 첫 포스트입니다.  
