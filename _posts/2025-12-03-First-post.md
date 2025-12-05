@@ -21,7 +21,7 @@ background-color: #C7B199
       그러다 우연히 개발자들이 많이 사용하고 있는 github가 생각났고, 
       이에 여러 튜토리얼을 보고 시작하게 되었습니다.
     </div>
-
+    
     <div class="step" data-img="2. fountain pen.jpg">
       <em><strong>2. 블로그는 삶의 기록이다</strong></em>
       교수님께서 강의 중 늘 강조하셨던 이야기 중 하나가 바로 블로그입니다.
@@ -82,7 +82,7 @@ background-color: #C7B199
 
 .step {
   opacity: 1;
-  margin: 120px 0;
+  margin: 60px 0;
   font-size: 1.2rem;
   line-height: 1.7;
   white-space: pre-line;
@@ -90,7 +90,7 @@ background-color: #C7B199
 
 .step.fade-out {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 </style>
 
