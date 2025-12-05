@@ -8,47 +8,127 @@ masthead: false
 background-color: "#EFECE3"  # 포스트별 배경색 변경 가능
 ---
 
-<!-- 🔹 좌측 고정 이미지 -->
-<div class="fixed-image">
-  <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png">
-</div>
+<section class="auto-scrolly">
 
-<!-- 🔹 본문 -->
-<div class="scrolly-text">
+  <!-- 좌측 고정 이미지 -->
+  <div class="fixed-image">
+    <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png">
+  </div>
 
-## Github 블로그를 시작하게 된 이유
-사실 그렇게 큰 이유가 있지는 않습니다.  
-이번 학기 온라인 저널리즘이라는 강의를 수강하게 되었고, 그 과정에서 포트폴리오를 만들게 되었습니다.  
-개인 웹호스팅 서비스를 여러모로 찾아보았으나, 저의 필요에 적합한 서비스를 찾을 수 없었습니다.  
-우연히 개발자들이 많이 사용하고 있는 GitHub가 생각났고, 여러 튜토리얼을 참고하여 시작하게 되었습니다.
+  <!-- 우측 본문 -->
+  <div class="scrolly-text">
+    <div class="step" data-img="1. github.png">
+      Github 블로그를 시작하게 된 이유
+      사실 그렇게 큰 이유가 있지는 않습니다.
+      이번 학기 온라인 저널리즘이라는 강의를 수강하게 되었고, 그 과정에서 포트폴리오를 만들게 되었습니다.
+      개인 웹호스팅 서비스를 여러모로 찾아보았으나, 저의 필요에 적합한 서비스를 찾을 수 없었습니다.
+      그러다 우연히 개발자들이 많이 사용하고 있는 github가 생각났고, 이에 여러 튜토리얼을 보고 시작하게 되었습니다.
+    </div>
 
-## 블로그는 삶의 기록이다
-교수님께서 강의 중 늘 강조하셨던 이야기 중 하나가 바로 블로그입니다.  
-특히 커뮤니케이션을 전공하는 학부생이라면 안 하는 것이 범죄라 하셨는데요.  
-이는 자신을 어필하는 요소이자, 마케팅 분야로 진출하는 학과의 특성상 당연한 이야기였습니다.  
-이전 사회에 글과 사진으로만 남겨졌던 단편적 기록을 블로그를 통해 더욱 입체적으로 발전시킬 수 있다고 생각했습니다.
+    <div class="step" data-img="2. fountain pen.jpg">
+      블로그는 삶의 기록이다
+      교수님께서 강의 중 늘 강조하셨던 이야기 중 하나가 바로 블로그입니다.
+      특히나 커뮤니케이션을 전공하는 학부생이라면 안하는 것이 범죄(매우 다소 의역)라 하셨는데요.
+      이는 어떻게 보면 자신을 어필하는 요소이자 특히나 마케팅분야로 많이 진출하는 학과의 특성상 당연한 이야기였습니다.
+      이에 이전 사회에 글과 사진으로만 남겨졌던 단편적 기록을 더욱 입체적으로 발전시킬 수 있는 블로그를 더욱더 시작해야겠노라 다짐하게 되었습니다.
+    </div>
 
-## Github는 무엇인가?
-GitHub는 마이크로소프트 산하의 서비스입니다.  
-Git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자 간 파일 작업을 조율할 수 있도록 돕는 분산 버전 관리 시스템입니다.  
-GitHub는 개발자들이 서로 소스를 직접 공유하지 않고도 같은 프로젝트에서 여러 명이 동시에 작업할 수 있게 해줍니다.  
-개인 블로그로 활용하는 사람들도 많아 저도 선택하게 되었습니다.  
-처음엔 약간 겁이 났지만, 블로그 제작을 돕는 기본 코드가 있어 생각보다 쉽게 시작할 수 있었습니다.  
-마크다운이라는 경량 마크업 언어를 사용한다는 점이 처음 사용자에게는 난이도를 높일 수 있습니다.
+    <div class="step" data-img="3. css coding.jpg">
+      Github는 무엇인가?
+      github는 마이크로소프트 산하의 서비스입니다.
+      git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템을 활용합니다.
+      이런 github는 개발자들 상호간 소스코드를 직접 공유하지 않고도, git을 통해 하나의 프로젝트, 같은 파일에 대해 여려명이 동시에 작업을 할 수 있도록 도와줍니다.
+      사실 개발자 친화적인 정책들로 매우 인기가 있는데, 생각보다 많은 분들이 개인 블로그로 활용을 하고 계시기에 저도 선택하게 되었습니다 :)
+      컴퓨터를 좋아하는가에 대해 묻는다면 개인적으로 그렇다고 대답하지만, 개발이나 코딩을 잘 아는가라고 묻는다면 절대 단호하게 아니라고 대답하는 사람이기에 처음엔 조금 겁이 났습니다.
+      그러나 블로그 제작을 돕는 기본 코드들을 배포하고 있었으며, 생각보다 그 과정 또한 어렵지 않아서 쉽게 할 수 있었던 것 같습니다.
+      다만 단점이자 장점이 있다면 마크다운이라는 경량 마크업 언어를 사용한다는 점이 처음 사용하는 사람에게는 조금 난이도를 높이는 요소가 될 수 있을 것 같았습니다.
+    </div>
 
-## 앞으로
-앞으로 여러 작업물이 생겨나는데로 업로드해보겠습니다.  
-다들 늘 이유 없는 성실함이 주변을 에워싸길 기원합니다.
+    <div class="step" data-img="2. fountain pen.jpg">
+      앞으로 여러 작업물이 생겨나는데로 업로드해보겠습니다.
+      다들 늘 이유없는 성실함이 주변을 에워싸길 기원합니다.
+    </div>
+  </div>
 
-</div>
+</section>
 
-<!-- 🎬 이미지 변경 JS -->
+<style>
+.fixed-image {
+  position: fixed;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 35%;
+  max-width: 400px;
+  z-index: 5;
+}
+
+.fixed-image img {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.scrolly-text {
+  width: 55%;
+  margin-left: 45%;
+  padding-top: 10vh;
+}
+
+.step {
+  opacity: 1;
+  margin: 120px 0;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.step.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+</style>
+
 <script>
-document.addEventListener("scroll", function () {
-  const steps = document.querySelectorAll(".step"); // 기존 step이 없어도 그냥 빈 배열로 처리
-  const img = document.getElementById("auto-img");
+const steps = document.querySelectorAll(".step");
+const img = document.getElementById("auto-img");
 
-  // 이미지 변경 로직을 그대로 유지하려면 step별 data-img가 필요하지만
-  // 현재는 애니메이션 없이 첫 이미지로 고정
+let currentIndex = 0;
+
+// 초기 설정
+steps.forEach((step, i) => {
+  if (i !== 0) step.classList.add("fade-out");
+});
+img.dataset.current = steps[0].dataset.img;
+
+// 스크롤 이벤트
+document.addEventListener("scroll", () => {
+  let index = 0;
+  steps.forEach((step, i) => {
+    const rect = step.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.45) index = i;
+  });
+
+  if (index !== currentIndex) {
+    // 이전 step fade out
+    steps[currentIndex].classList.add("fade-out");
+
+    // 새로운 step fade in
+    steps[index].classList.remove("fade-out");
+
+    // 이미지 변경
+    const newImg = steps[index].dataset.img;
+    if (img.dataset.current !== newImg) {
+      img.dataset.current = newImg;
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = `/assets/images/post/1.기록에관해/${newImg}`;
+        img.style.opacity = 1;
+      }, 200);
+    }
+
+    currentIndex = index;
+  }
 });
 </script>
+
