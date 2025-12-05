@@ -86,7 +86,7 @@ background-color: #C7B199
 
 .step {
   opacity: 1;
-  margin: 60px 0;
+  margin: 30px 0;
   font-size: 1.2rem;
   line-height: 1.7;
   white-space: pre-line;
