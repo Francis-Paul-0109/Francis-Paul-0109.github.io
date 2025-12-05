@@ -199,3 +199,45 @@ body h6 {
 .auto-scrolly .step.active {
   opacity: 1;
 }
+
+.masthead-center .masthead__inner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.masthead__title-wrap .site-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.masthead__title-wrap .site-subtitle {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-weight: normal;
+}
+
+.homepage-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.homepage-nav ul li a {
+  text-decoration: none;
+  color: #1A1A1A;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.homepage-nav ul li a:hover {
+  color: #c7b199;
+}
+
