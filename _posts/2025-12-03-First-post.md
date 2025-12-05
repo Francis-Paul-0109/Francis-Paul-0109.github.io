@@ -1,16 +1,17 @@
 ---
 title: "001. 기록에 관해"
 categories: blog
-layout: single
+layout: none   # default 레이아웃 사용하지 않고 독립 레이아웃
 sidebar: false
+toc: false
 ---
 
 <!-- 🎬 전체 래퍼 -->
 <section class="auto-scrolly">
 
-  <!-- 🔥 상단 고정 이미지 -->
+  <!-- 🔥 상단 중앙 고정 이미지 -->
   <div class="fixed-image">
-    <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png">
+    <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png" data-current="1. github.png">
   </div>
 
   <!-- 🔥 스크롤 본문 -->
@@ -67,7 +68,14 @@ git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사�
 
 <!-- 🎨 STYLE -->
 <style>
-/* 화면 상단 중앙 고정 이미지 */
+body {
+  margin: 0;
+  font-family: "MyHeaderFont", sans-serif;
+  background: #EFECE3;
+  overflow-x: hidden;
+}
+
+/* 상단 중앙 고정 이미지 */
 .fixed-image {
   position: fixed;
   top: 0;
@@ -80,21 +88,22 @@ git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사�
 }
 .fixed-image img {
   width: 100%;
-  opacity: 1;
+  border-radius: 8px;
   transition: opacity 0.7s ease-in-out;
 }
 
 /* 본문 */
 .scrolly-text {
   width: 60%;
+  max-width: 800px;
   margin: 0 auto;
-  padding-top: 70vh; /* 이미지 아래에서 시작하도록 */
+  padding-top: 70vh; /* 이미지 아래로 시작 */
 }
 
 .step {
-  margin: 120px 0;
   opacity: 0.2;
   min-height: 80vh;
+  margin-bottom: 120px;
   font-size: 1.2rem;
   line-height: 1.7;
   white-space: pre-line;
@@ -103,14 +112,18 @@ git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사�
 .step.active {
   opacity: 1;
 }
+
+/* 타이핑 활성 */
+.typewriter {
+  opacity: 1 !important;
+}
 </style>
 
-<!-- 🎬 스크립트 -->
+<!-- 🎬 JS -->
 <script>
 document.addEventListener("scroll", function () {
   const steps = document.querySelectorAll(".step");
   const img = document.getElementById("auto-img");
-
   let index = 0;
 
   steps.forEach((step, i) => {
@@ -120,7 +133,7 @@ document.addEventListener("scroll", function () {
 
   const active = steps[index];
 
-  // 텍스트 활성화
+  // 텍스트 활성
   steps.forEach(step => step.classList.remove("active"));
   active.classList.add("active");
 
