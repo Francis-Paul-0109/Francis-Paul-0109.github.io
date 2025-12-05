@@ -138,3 +138,29 @@ body h6 {
   font-weight: 100 !important;     /* 진짜 얇게 */
   letter-spacing: -0.3px;
 }
+
+/* 스크롤 스토리텔링 구조*/
+.scrolly {
+  display: flex;
+  gap: 40px;
+  margin: 80px 0;
+}
+
+.scrolly-graphic {
+  position: sticky;
+  top: 10vh;
+  width: 50%;
+}
+
+.scrolly-text {
+  width: 45%;
+}
+
+.step {
+  margin: 80vh 0;
+  opacity: 0.4;
+}
+
+.step.active {
+  opacity: 1;
+}
