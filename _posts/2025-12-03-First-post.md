@@ -68,8 +68,8 @@ background-color: "#C7B199"  # 포스트별 배경색 변경 가능
 
 /* 텍스트 영역을 더 중앙쪽으로 이동 */
 .scrolly-text {
-  width: 100%;
-  margin-left: 10%; /* 기존 45% → 40%로 조정 */
+  width: 80%;
+  margin-left: 20%; /* 기존 45% → 40%로 조정 */
   padding-top: 10vh;
 }
 
