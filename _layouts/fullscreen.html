@@ -13,6 +13,7 @@ layout: none
       font-family: "MyHeaderFont", sans-serif;
       overflow-x: hidden;
       transition: background 0.5s ease; /* 배경색 페이드 */
+      <body {% if page.background-color %}style="background-color: {{ page.background-color }};"{% endif %}>
     }
 
     /* 좌측 고정 이미지 */
