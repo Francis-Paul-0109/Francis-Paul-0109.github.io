@@ -34,17 +34,21 @@ layout: none
       transition: opacity 0.5s ease-in-out;
     }
 
-    /* 우측 스크롤 텍스트 */
-    .scrolly-text {
-      width: 65%;
-      margin-left: 35%;
-      padding-top: 2vh;
-      padding-bottom: 4rem;
-      font-size: 1.15rem;
-      line-height: 1.7;
-      white-space: pre-line;
-      color: {% if page.text_color %}{{ page.text_color }}{% else %}#37353E{% endif %} !important;
-    }
+  /* 우측 스크롤리 텍스트*/
+   .scrolly-text {
+  width: {% if page.text_width %}{{ page.text_width }}{% else %}80%{% endif %};
+  margin-left: {% if page.text_margin_left %}{{ page.text_margin_left }}{% else %}20%{% endif %};
+  padding-top: {% if page.text_padding_top %}{{ page.text_padding_top }}{% else %}2vh{% endif %};
+  padding-bottom: 4rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  white-space: pre-line;
+  {% if page.text_color %}
+  color: {{ page.text_color }} !important;
+  {% else %}
+  color: #37353E !important;
+  {% endif %}
+}
 
     /* 스텝 텍스트 페이드 (opacity 제거, transform 사용) */
     .step {
