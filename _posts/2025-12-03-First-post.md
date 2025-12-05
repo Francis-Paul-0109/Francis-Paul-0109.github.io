@@ -11,7 +11,6 @@ text_color: "#1A1A1A"
 
 <section class="auto-scrolly">
 
-  <!-- 우측 본문 -->
   <div class="scrolly-text">
     <div class="step" data-img="1. github.png">
       <em><strong>1. Github 블로그를 시작하게 된 이유</strong></em>
@@ -59,81 +58,3 @@ text_color: "#1A1A1A"
   </div>
 
 </section>
-
-<style>
-/* 고정 이미지 */
-.fixed-image {
-  position: fixed;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  width: 35%;
-  max-width: 400px;
-  z-index: 5;
-}
-.fixed-image img {
-  width: 100%;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-}
-
-/* 스크롤 텍스트 영역 */
-.scrolly-text {
-  width: 80%;
-  margin-left: 20%;
-  padding-top: 0vh;
-  color: {% if page.text_color %}{{ page.text_color }}{% else %}#37353E{% endif %};
-}
-
-/* 스텝 텍스트 */
-.step {
-  opacity: 1;
-  margin: 10px 0;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  white-space: pre-line;
-}
-
-.step.fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-</style>
-
-<script>
-const steps = document.querySelectorAll(".step");
-const img = document.getElementById("auto-img");
-let currentIndex = 0;
-
-// 초기 설정
-steps.forEach((step, i) => {
-  if (i !== 0) step.classList.add("fade-out");
-});
-img.dataset.current = steps[0].dataset.img;
-
-// 스크롤 이벤트
-document.addEventListener("scroll", () => {
-  let index = 0;
-  steps.forEach((step, i) => {
-    const rect = step.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.45) index = i;
-  });
-
-  if (index !== currentIndex) {
-    steps[currentIndex].classList.add("fade-out");
-    steps[index].classList.remove("fade-out");
-
-    const newImg = steps[index].dataset.img;
-    if (img.dataset.current !== newImg) {
-      img.dataset.current = newImg;
-      img.style.opacity = 0;
-      setTimeout(() => {
-        img.src = `/assets/images/post/1.기록에관해/${newImg}`;
-        img.style.opacity = 1;
-      }, 500);
-    }
-
-    currentIndex = index;
-  }
-});
-</script>
