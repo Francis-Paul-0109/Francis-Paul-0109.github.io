@@ -69,4 +69,4 @@ text_padding_top: "1vh"
     </div>
   </div>
 
-</section>
+
