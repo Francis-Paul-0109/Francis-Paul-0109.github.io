@@ -5,6 +5,7 @@ layout: fullscreen
 sidebar: false
 footer: false
 masthead: false
+background-color: "#EFECE3"  # 여기서 포스트별 배경색 변경 가능
 ---
 
 <!-- 🎬 전체 래퍼 -->
@@ -47,6 +48,15 @@ git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사�
 
 <!-- 🎨 STYLE -->
 <style>
+/* 전체 배경색 */
+body {
+  background-color: {{ page.background-color }};
+  font-family: "MyHeaderFont", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 /* 좌측 고정 이미지 */
 .fixed-image {
   position: fixed;
@@ -98,11 +108,11 @@ document.addEventListener("scroll", function () {
 
   const active = steps[index];
 
-  // 텍스트 활성화
+  // 텍스트 페이드
   steps.forEach(step => step.classList.remove("active"));
   active.classList.add("active");
 
-  // 이미지 변경
+  // 이미지 페이드
   const newImg = active.dataset.img;
   if (img.dataset.current !== newImg) {
     img.dataset.current = newImg;
