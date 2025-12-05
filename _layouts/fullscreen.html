@@ -43,7 +43,7 @@ layout: none
       font-size: 1.15rem;
       line-height: 1.7;
       white-space: pre-line;
-      color: #37353E;
+      color: #37353E; /* 기본 텍스트 색상 */
     }
 
     /* 스텝 텍스트 페이드 */
@@ -60,15 +60,15 @@ layout: none
 </head>
 
 <!-- body는 한 번만 작성, front matter에서 지정한 background_color 적용 -->
-<body {% if page.background_color %}style="background-color: {{ page.background_color }};"{% endif %}>
+<body {% if page.background-color %}style="background-color: {{ page.background-color }};"{% endif %}>
 
   <!-- 좌측 고정 이미지 -->
   <div class="fixed-image">
     <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png">
   </div>
 
-  <!-- 우측 스크롤 본문 -->
-  <div class="scrolly-text">
+  <!-- 우측 스크롤 본문, 포스트별 text-color 적용 -->
+  <div class="scrolly-text" {% if page.text-color %}style="color: {{ page.text-color }};"{% endif %}>
     {{ content }}
   </div>
 
@@ -107,7 +107,7 @@ layout: none
           setTimeout(() => {
             img.src = `/assets/images/post/1.기록에관해/${newImg}`;
             img.style.opacity = 1;
-          }, 500); // 페이드 트랜지션 조금 느리게
+          }, 500);
         }
 
         currentIndex = index;
