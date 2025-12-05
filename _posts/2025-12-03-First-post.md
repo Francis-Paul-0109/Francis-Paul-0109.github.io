@@ -6,6 +6,7 @@ sidebar: false
 footer: false
 masthead: false
 background_color: "#c7b199"  
+text_color: "#1A1A1A"
 ---
 
 <section class="auto-scrolly">
