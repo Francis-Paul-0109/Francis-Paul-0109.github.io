@@ -5,7 +5,7 @@ layout: fullscreen
 sidebar: false
 footer: false
 masthead: false
-background-color: "#EFECE3"  # 여기서 포스트별 배경색 변경 가능
+background-color: "#EFECE3"  # 포스트별 배경색 변경 가능
 ---
 
 <!-- 🎬 전체 래퍼 -->
@@ -18,6 +18,7 @@ background-color: "#EFECE3"  # 여기서 포스트별 배경색 변경 가능
 
   <!-- 🔥 우측 스크롤 본문 -->
   <div class="scrolly-text">
+    {{ content }}
 
     <div class="step" data-img="1. github.png" data-text="Github 블로그를 시작하게 된 이유
 사실 그렇게 큰 이유가 있지는 않습니다.
@@ -42,13 +43,12 @@ git이라는 형상 관리 도구 중 하나로, 컴퓨터 파일의 변경사�
 
     <div class="step" data-img="2. fountain pen.jpg" data-text="앞으로 여러 작업물이 생겨나는데로 업로드해보겠습니다.
 다들 늘 이유없는 성실함이 주변을 에워싸길 기원합니다."></div>
-
   </div>
+
 </section>
 
 <!-- 🎨 STYLE -->
 <style>
-/* 전체 배경색 */
 body {
   background-color: {{ page.background-color }};
   font-family: "MyHeaderFont", sans-serif;
@@ -69,24 +69,27 @@ body {
 }
 .fixed-image img {
   width: 100%;
+  border-radius: 8px;
   opacity: 1;
   transition: opacity 0.7s ease-in-out;
 }
 
-/* 본문 */
+/* 우측 본문 */
 .scrolly-text {
   width: 55%;
   margin-left: 45%;
-  padding-top: 10vh; /* 상단 여유 */
+  padding-top: 10vh;
+  padding-bottom: 4rem;
+  line-height: 1.7;
+  font-size: 1.2rem;
+  white-space: pre-line;
 }
 
+/* 스텝 텍스트 페이드 */
 .step {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
   margin: 120px 0;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  white-space: pre-line;
 }
 .step.active {
   opacity: 1;
@@ -98,9 +101,11 @@ body {
 document.addEventListener("scroll", function () {
   const steps = document.querySelectorAll(".step");
   const img = document.getElementById("auto-img");
+  
+  // 초기 dataset.current 제거 -> 첫 이미지 고정 문제 해결
+  img.dataset.current = "";
 
   let index = 0;
-
   steps.forEach((step, i) => {
     const rect = step.getBoundingClientRect();
     if (rect.top < window.innerHeight * 0.45) index = i;
@@ -112,7 +117,7 @@ document.addEventListener("scroll", function () {
   steps.forEach(step => step.classList.remove("active"));
   active.classList.add("active");
 
-  // 이미지 페이드
+  // 이미지 변경 + 페이드
   const newImg = active.dataset.img;
   if (img.dataset.current !== newImg) {
     img.dataset.current = newImg;
