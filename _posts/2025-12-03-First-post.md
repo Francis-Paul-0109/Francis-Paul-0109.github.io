@@ -1,5 +1,5 @@
 ---
-title: "첫 번째 글"
+title: "001. 기록에 관해"
 categories: blog
 layout: single
 ---
