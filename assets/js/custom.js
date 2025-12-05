@@ -15,7 +15,8 @@ steps.forEach(step => {
 
 function activate(step) {
   const imgName = step.dataset.img;
-  img.src = `/assets/images/${imgName}`;
+
+  img.src = `/assets/images/post/1.기록에관해/${imgName}`;
 
   steps.forEach(s => s.classList.remove("active"));
   step.classList.add("active");
