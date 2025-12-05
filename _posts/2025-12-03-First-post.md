@@ -2,6 +2,7 @@
 title: "001. 기록에 관해"
 categories: blog
 layout: single
+sidebar: false
 ---
 
 <!-- 🎬 스크롤텔링 전체 래퍼 -->
