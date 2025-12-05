@@ -1,7 +1,7 @@
 ---
 title: "001. 기록에 관해"
 categories: blog
-layout: single
+layout: fullscreen
 sidebar: false
 footer: false
 masthead: false
