@@ -5,15 +5,11 @@ layout: fullscreen
 sidebar: false
 footer: false
 masthead: false
-background-color: "#EFECE3"  # 포스트별 배경색 변경 가능
+background-color: "#C7B1993"  # 포스트별 배경색 변경 가능
 ---
 
 <section class="auto-scrolly">
 
-  <!-- 좌측 고정 이미지 -->
-  <div class="fixed-image">
-    <img id="auto-img" src="/assets/images/post/1.기록에관해/1. github.png">
-  </div>
 
   <!-- 우측 본문 -->
   <div class="scrolly-text">
@@ -69,9 +65,10 @@ background-color: "#EFECE3"  # 포스트별 배경색 변경 가능
   transition: opacity 0.7s ease-in-out;
 }
 
+/* 텍스트 영역을 더 중앙쪽으로 이동 */
 .scrolly-text {
   width: 55%;
-  margin-left: 45%;
+  margin-left: 40%; /* 기존 45% → 40%로 조정 */
   padding-top: 10vh;
 }
 
@@ -131,4 +128,3 @@ document.addEventListener("scroll", () => {
   }
 });
 </script>
-
