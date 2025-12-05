@@ -164,3 +164,38 @@ body h6 {
 .step.active {
   opacity: 1;
 }
+
+/* ------------------------------------------
+   🔽 뉴욕타임즈형 자동 스크롤텔링(독립형 버전)
+   - 기존 스타일 절대 수정 안 함
+   - 다른 레이아웃/포스트에 영향 없음
+   - auto-scrolly 클래스 사용 시에만 작동
+------------------------------------------- */
+
+.auto-scrolly {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.auto-scrolly .scrolly-graphic {
+  position: sticky;
+  top: 15vh;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.auto-scrolly .scrolly-graphic img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.auto-scrolly .step {
+  margin: 80vh 0;      /* 스크롤 텔링 간격 */
+  opacity: 0.2;
+  transition: opacity 0.35s ease;
+}
+
+.auto-scrolly .step.active {
+  opacity: 1;
+}
