@@ -14,7 +14,7 @@ text_color: "#1A1A1A"
   <div class="scrolly-text">
     <div class="scrolly-text" style="
       width: 80%;       /* 본문 폭 */
-      margin-left: 20%; /* 왼쪽 여백 */
+      margin-left: 10%; /* 왼쪽 여백 */
       padding-top: 1vh; /* 위쪽 여백 */
       line-height: 1.8; /* 줄 간격 */
       font-size: 1.2rem; /* 글자 크기 */
