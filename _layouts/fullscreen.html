@@ -60,7 +60,7 @@ layout: none
 </head>
 
 <!-- body는 한 번만 작성, front matter에서 지정한 background_color 적용 -->
-<body {% if page.background_color %}style="background_color: {{ page.background_color }};"{% endif %}>
+<body {% if page.background_color %}style="background-color: {{ page.background_color }};"{% endif %}>
 
   <!-- 좌측 고정 이미지 -->
   <div class="fixed-image">
@@ -68,7 +68,7 @@ layout: none
   </div>
 
   <!-- 우측 스크롤 본문, 포스트별 text-color 적용 -->
-  <div class="scrolly-text" {% if page.text_color %}style="color: {{ page.text_color }};"{% endif %}>
+  <div class="scrolly-text" {% if page.text_color %}style="text-color: {{ page.text_color }};"{% endif %}>
     {{ content }}
   </div>
 
