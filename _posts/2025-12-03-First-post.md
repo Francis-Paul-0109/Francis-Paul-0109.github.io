@@ -81,12 +81,12 @@ background-color: #c7b199
 .scrolly-text {
   width: 80%;
   margin-left: 20%; /* 기존 45% → 40%로 조정 */
-  padding-top: 0vh;
+  padding-top: -10vh;
 }
 
 .step {
   opacity: 1;
-  margin: 10px 0;
+  margin: 0px 0;
   font-size: 1.2rem;
   line-height: 1.7;
   white-space: pre-line;
