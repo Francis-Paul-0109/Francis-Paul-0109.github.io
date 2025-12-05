@@ -5,7 +5,7 @@ layout: fullscreen
 sidebar: false
 footer: false
 masthead: false
-background-color: #C7B199  
+background-color: #c7b199  
 ---
 
 <section class="auto-scrolly">
@@ -27,7 +27,7 @@ background-color: #C7B199
       교수님께서 강의 중 늘 강조하셨던 이야기 중 하나가 바로 블로그입니다.
       특히나 커뮤니케이션을 전공하는 학부생이라면 안하는 것이 범죄(매우 다소 의역)라 하셨는데요.
       이는 어떻게 보면 자신을 어필하는 요소로서,
-      특히나 마케팅분야로 많이 진출하는 저희 학과의 특성상 중요한 거 같습니다.
+      아무래 마케팅분야로 많이 진출하는 저희 학과의 특성상 중요한 거 같습니다.
       이에 이전 사회에 글과 사진으로만 남겨졌던 단편적 기록을 더욱 입체적으로 발전시킬 수 있는 
       블로그를 더욱더 시작해야겠노라 다짐하게 되었습니다.
     </div>
@@ -81,7 +81,7 @@ background-color: #C7B199
 .scrolly-text {
   width: 80%;
   margin-left: 20%; /* 기존 45% → 40%로 조정 */
-  padding-top: 10vh;
+  padding-top: 0vh;
 }
 
 .step {
