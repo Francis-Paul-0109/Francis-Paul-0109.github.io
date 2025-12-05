@@ -7,6 +7,9 @@ footer: false
 masthead: false
 background_color: "#c7b199"
 text_color: "#1A1A1A"
+text_width: "80%"
+text_margin_left: "20%"
+text_padding_top: "1vh"
 ---
 
 <section class="auto-scrolly">
