@@ -48,19 +48,19 @@ layout: none
 
     /* 스텝 텍스트 페이드 */
     .step {
-      opacity: 1; /* 기본은 뚜렷하게 표시 */
+      opacity: 0;
       margin-bottom: 4rem;
       transition: opacity 1s ease-out;
     }
 
-    .step.fade-out {
-      opacity: 0;
+    .step.active {
+      opacity: 1;
     }
   </style>
 </head>
 
-<!-- body는 한 번만 작성, front matter에서 지정한 background_color 적용 -->
-<body {% if page.background_color %}style="background-color: {{ page.background_color }};"{% endif %}>
+<!-- body는 한 번만 작성, front matter에서 지정한 background-color 적용 -->
+<body {% if page.background-color %}style="background-color: {{ page.background-color }};"{% endif %}>
 
   <!-- 좌측 고정 이미지 -->
   <div class="fixed-image">
@@ -78,7 +78,7 @@ layout: none
     const img = document.getElementById("auto-img");
     let currentIndex = 0;
 
-    // 초기 설정: 첫 번째 제외 나머지 fade-out 적용
+    // 초기 설정
     steps.forEach((step, i) => {
       if (i !== 0) step.classList.add("fade-out");
     });
@@ -107,7 +107,7 @@ layout: none
           setTimeout(() => {
             img.src = `/assets/images/post/1.기록에관해/${newImg}`;
             img.style.opacity = 1;
-          }, 500); // 페이드 트랜지션 조금 느리게
+          }, 500); // 페이드 트랜지션 살짝 느리게
         }
 
         currentIndex = index;
