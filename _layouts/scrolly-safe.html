@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrolly-Safe Template</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fafafa;
+    }
+    .container {
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .step {
+      position: relative;
+      padding: 40vh 10vw;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      border-bottom: 1px solid #e5e5e5;
+      background: white;
+    }
+    .step img {
+      max-width: 100%;
+      margin-top: 1rem;
+      border-radius: 10px;
+    }
+    .sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      color: white;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sticky" id="sticky">Intro / Key Visual</div>
+
+    <div class="step">첫 번째 스텝 텍스트. 여기에 MD 내용이 HTML로 들어갑니다.<br>
+      <img src="https://placekitten.com/800/500" />
+    </div>
+
+    <div class="step">두 번째 스텝. 텍스트 + 이미지 등 자유롭게 추가.<br>
+      <img src="https://placehold.co/800x500" />
+    </div>
+
+    <div class="step">세 번째 스텝. 콘텐츠만 늘려서 쓰면 됨.</div>
+  </div>
+</body>
+</html>
