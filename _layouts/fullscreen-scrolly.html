@@ -45,20 +45,21 @@ layout: none
       {% if page.text_color %}
       color: {{ page.text_color }} !important;
       {% else %}
-      color: #37353E !important;
+      color: #FFFFFF !important;
       {% endif %}
     }
 
     /* 스텝 기본 스타일 */
     .step {
       margin: 80vh 0;
+      opacity: 0;
       transform: translateY(30px);
-      opacity: 0; /* 기존 0.2 → 0으로 변경 */
-      transition: opacity 0.35s ease;
     }
 
     .step.active {
       opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     /* 키워드 강조 */
@@ -90,10 +91,10 @@ layout: none
     const steps = document.querySelectorAll(".step");
     const img = document.getElementById("auto-img");
 
+    // 초기 이미지와 첫 스텝 활성화
     if(steps.length > 0){
-      // 초기 활성화
       steps[0].classList.add("active");
-      img.src = `/assets/images/{{ page.slug | default: page.title }}/` + steps[0].dataset.img;
+      img.src = `/assets/images/{{ page.slug | default: page.title | uri_escape }}/` + steps[0].dataset.img;
     }
 
     steps.forEach(step => {
@@ -107,28 +108,26 @@ layout: none
     });
 
     function activateStep(step){
+      // 이미지 변경
       const newImg = step.dataset.img;
       if(img.src.indexOf(newImg) === -1){
         gsap.to(img, {opacity:0, duration:0.4, onComplete:()=>{
-          img.src = `/assets/images/{{ page.slug | default: page.title }}/` + newImg;
+          img.src = `/assets/images/{{ page.slug | default: page.title | uri_escape }}/` + newImg;
           gsap.to(img, {opacity:1, duration:0.4});
         }});
       }
 
+      // 현재 스텝 활성화
       steps.forEach(s => s.classList.remove("active"));
       step.classList.add("active");
-
-      // 텍스트 등장 애니메이션
-      gsap.fromTo(step, {y:30, opacity:0}, {y:0, opacity:1, duration:0.6, ease:"power2.out"});
 
       // 핵심 키워드 강조
       const kw = step.querySelectorAll(".highlight-keyword");
       kw.forEach(k => {
-        gsap.fromTo(k, {scale:0.8, color:"#ff9800", opacity:0},
-                          {scale:1, color:"#ff9800", opacity:1, duration:0.6, ease:"back.out(1.7)"});
+        gsap.fromTo(k, {scale:0.8, opacity:0},
+                          {scale:1, opacity:1, duration:0.6, ease:"back.out(1.7)"});
       });
     }
   </script>
-
 </body>
 </html>
