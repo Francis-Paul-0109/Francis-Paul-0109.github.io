@@ -1,0 +1,123 @@
+---
+layout: none
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  {% include head.html %}
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "MyHeaderFont", sans-serif;
+      overflow-x: hidden;
+      transition: background 0.5s ease;
+    }
+
+    /* 왼쪽 고정 이미지 */
+    .fixed-image {
+      position: fixed;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      width: 30%;
+      max-width: 350px;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .fixed-image img {
+      width: 100%;
+      border-radius: 8px;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    /* 우측 스크롤 텍스트 */
+    .scrolly-text {
+      width: {% if page.text_width %}{{ page.text_width }}{% else %}80%{% endif %};
+      margin-left: {% if page.text_margin_left %}{{ page.text_margin_left }}{% else %}20%{% endif %};
+      padding-top: {% if page.text_padding_top %}{{ page.text_padding_top }}{% else %}2vh{% endif %};
+      padding-bottom: 4rem;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      white-space: pre-line;
+      {% if page.text_color %}
+      color: {{ page.text_color }} !important;
+      {% else %}
+      color: #37353E !important;
+      {% endif %}
+    }
+
+    /* step animation */
+    .step {
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.5s ease-out;
+      margin-bottom: 4rem;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .step.active {
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body {% if page.background_color %}style="background-color: {{ page.background_color }};"{% endif %}>
+
+  <!-- 좌측 고정 이미지 -->
+  <div class="fixed-image">
+    <img id="auto-img" src="/assets/images/{{ page.folder }}/{{ page.first_img }}">
+  </div>
+
+  <!-- 스크롤 텍스트 -->
+  <div class="scrolly-text">
+    {{ content }}
+  </div>
+
+  <script>
+    const steps = document.querySelectorAll(".step");
+    const img = document.getElementById("auto-img");
+    const baseFolder = "/assets/images/{{ page.folder }}";
+
+    let currentIndex = 0;
+
+    /* 첫 번째 step 활성화 */
+    if (steps.length > 0) {
+      steps[0].classList.add("active");
+      img.dataset.current = steps[0].dataset.img;
+    }
+
+    document.addEventListener("scroll", () => {
+      let index = 0;
+
+      steps.forEach((step, i) => {
+        const rect = step.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.45) index = i;
+      });
+
+      if (index !== currentIndex) {
+        steps[currentIndex].classList.remove("active");
+        steps[index].classList.add("active");
+
+        const newImg = steps[index].dataset.img;
+
+        if (img.dataset.current !== newImg) {
+          img.dataset.current = newImg;
+          img.style.opacity = 0;
+
+          setTimeout(() => {
+            img.src = `${baseFolder}/${newImg}`;
+            img.style.opacity = 1;
+          }, 500);
+        }
+
+        currentIndex = index;
+      }
+    });
+  </script>
+</body>
+</html>
