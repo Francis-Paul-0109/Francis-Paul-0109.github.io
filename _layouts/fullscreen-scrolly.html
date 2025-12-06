@@ -1,21 +1,21 @@
----
-layout: none
----
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  {% include head.html %}
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: "MyHeaderFont", sans-serif;
+      background-color: #1A1A1A;
+      color: #FFFFFF;
       overflow-x: hidden;
-      transition: background 0.5s ease;
+      font-family: "MyHeaderFont", sans-serif;
     }
 
-    /* 좌측 고정 이미지 */
+    /* 좌측 이미지 */
     .fixed-image {
       position: fixed;
       top: 50%;
@@ -26,30 +26,24 @@ layout: none
       z-index: 5;
       pointer-events: none;
     }
-
     .fixed-image img {
       width: 100%;
-      border-radius: 8px;
-      transition: opacity 0.5s ease-in-out;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
     }
 
-    /* 우측 스크롤 텍스트 */
+    /* 우측 텍스트 */
     .scrolly-text {
-      width: {% if page.text_width %}{{ page.text_width }}{% else %}80%{% endif %};
-      margin-left: {% if page.text_margin_left %}{{ page.text_margin_left }}{% else %}20%{% endif %};
-      padding-top: {% if page.text_padding_top %}{{ page.text_padding_top }}{% else %}2vh{% endif %};
+      width: 90%;
+      margin-left: 15%;
+      padding-top: 0vh;
       padding-bottom: 4rem;
       font-size: 1.15rem;
       line-height: 1.7;
       white-space: pre-line;
-      {% if page.text_color %}
-      color: {{ page.text_color }} !important;
-      {% else %}
-      color: #FFFFFF !important;
-      {% endif %}
     }
 
-    /* 스텝 기본 스타일 */
     .step {
       margin: 80vh 0;
       opacity: 0;
@@ -62,7 +56,6 @@ layout: none
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    /* 키워드 강조 */
     .highlight-keyword {
       font-weight: bold;
       color: #ff9800;
@@ -70,64 +63,58 @@ layout: none
   </style>
 </head>
 
-<body {% if page.background_color %}style="background-color: {{ page.background_color }};"{% endif %}>
+<body>
 
-  <!-- 좌측 고정 이미지 -->
   <div class="fixed-image">
     <img id="auto-img" src="">
   </div>
 
-  <!-- 우측 스크롤 텍스트 -->
   <div class="scrolly-text">
-    {{ content }}
+    <!-- md 내용 자동 렌더링 -->
+    {{ content | markdownify }}
   </div>
 
-  <!-- GSAP + ScrollTrigger -->
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
     const steps = document.querySelectorAll(".step");
     const img = document.getElementById("auto-img");
 
-    // 초기 이미지와 첫 스텝 활성화
-    if(steps.length > 0){
+    // 초기
+    if (steps.length > 0) {
       steps[0].classList.add("active");
-      img.src = `/assets/images/{{ page.slug | default: page.title | uri_escape }}/` + steps[0].dataset.img;
+      img.src = "/assets/images/{{ page.slug }}/" + steps[0].dataset.img;
+      img.style.opacity = 1;
     }
 
     steps.forEach(step => {
       ScrollTrigger.create({
         trigger: step,
-        start: "top 60%",
-        end: "bottom 40%",
-        onEnter: () => activateStep(step),
-        onEnterBack: () => activateStep(step)
+        start: "top 70%",
+        end: "bottom 30%",
+        onEnter: () => activate(step),
+        onEnterBack: () => activate(step)
       });
     });
 
-    function activateStep(step){
-      // 이미지 변경
+    function activate(step) {
       const newImg = step.dataset.img;
-      if(img.src.indexOf(newImg) === -1){
-        gsap.to(img, {opacity:0, duration:0.4, onComplete:()=>{
-          img.src = `/assets/images/{{ page.slug | default: page.title | uri_escape }}/` + newImg;
-          gsap.to(img, {opacity:1, duration:0.4});
+
+      if (img.src.indexOf(newImg) === -1) {
+        gsap.to(img, { opacity: 0, duration: 0.4, onComplete: () => {
+          img.src = "/assets/images/{{ page.slug }}/" + newImg;
+          gsap.to(img, { opacity: 1, duration: 0.4 });
         }});
       }
 
-      // 현재 스텝 활성화
       steps.forEach(s => s.classList.remove("active"));
       step.classList.add("active");
-
-      // 핵심 키워드 강조
-      const kw = step.querySelectorAll(".highlight-keyword");
-      kw.forEach(k => {
-        gsap.fromTo(k, {scale:0.8, opacity:0},
-                          {scale:1, opacity:1, duration:0.6, ease:"back.out(1.7)"});
-      });
     }
   </script>
+
 </body>
 </html>
