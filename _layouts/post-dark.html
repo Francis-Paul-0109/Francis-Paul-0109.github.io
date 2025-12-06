@@ -37,19 +37,29 @@
 
     /* 각 스텝 */
     .step {
-      position: relative;
-      padding: 40vh 10vw;
-      font-size: 1.15rem;
-      line-height: 1.7;
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 20vh 10vw;
       border-bottom: 1px solid #333;
       background: #1A1A1A;
     }
 
     .step img {
-      max-width: 100%;
-      margin-top: 1rem;
+      flex-shrink: 0;
+      width: 40%;
+      max-height: 60vh;
+      object-fit: cover;
       border-radius: 10px;
-      display: block;
+      position: sticky;
+      top: 20vh;
+    }
+
+    .step .text {
+      width: 60%;
+      color: #fff;
+      font-size: 1.15rem;
+      line-height: 1.7;
     }
 
     em strong {
@@ -65,14 +75,28 @@
       margin-top: 1rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .step {
-        padding: 30vh 5vw;
-        font-size: 1rem;
+        flex-direction: column;
+        padding: 20vh 5vw;
       }
+      .step img {
+        position: relative;
+        width: 100%;
+        top: auto;
+        max-height: 400px;
+      }
+      .step .text {
+        width: 100%;
+      }
+    }
 
+    @media (max-width: 768px) {
       .sticky {
         font-size: 1.5rem;
+      }
+      .step {
+        padding: 15vh 5vw;
       }
     }
   </style>
