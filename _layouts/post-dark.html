@@ -45,7 +45,7 @@
       background: #1A1A1A;
     }
 
-    /* 이미지 초기 상태 + transition + 패럴랙스 */
+    /* 이미지 초기 상태 + transition */
     .step img {
       flex-shrink: 0;
       width: 40%;
@@ -54,8 +54,7 @@
       border-radius: 10px;
       position: sticky;
       top: 20vh;
-
-      transform: translateY(0) translateX(-20px);
+      transform: translateX(-20px);
       opacity: 0;
       transition: transform 0.6s ease-out, opacity 0.6s ease-out;
     }
@@ -73,8 +72,8 @@
 
     /* 활성화 상태 */
     .step.visible img {
+      transform: translateX(0);
       opacity: 1;
-      transform: translateY(var(--parallax, 0px)) translateX(0);
     }
 
     .step.visible .text {
@@ -161,7 +160,7 @@
 
     steps.forEach(step => observer.observe(step));
 
-    // Fade & Slide + 패럴랙스 효과
+    // Fade & Slide effect용 IntersectionObserver
     const fadeObserverOptions = {
       root: null,
       rootMargin: '0px',
@@ -177,20 +176,6 @@
     }, fadeObserverOptions);
 
     steps.forEach(step => fadeObserver.observe(step));
-
-    // 패럴랙스
-    window.addEventListener('scroll', () => {
-      steps.forEach(step => {
-        if (step.classList.contains('visible')) {
-          const rect = step.getBoundingClientRect();
-          const img = step.querySelector('img');
-          if (img) {
-            const offset = rect.top * 0.2; // 패럴랙스 속도
-            img.style.setProperty('--parallax', `${offset}px`);
-          }
-        }
-      });
-    });
   </script>
 </body>
 </html>
