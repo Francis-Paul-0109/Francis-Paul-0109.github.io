@@ -26,7 +26,6 @@ layout: none
       z-index: 5;
       pointer-events: none;
     }
-
     .fixed-image img {
       width: 100%;
       border-radius: 8px;
@@ -45,20 +44,28 @@ layout: none
       {% if page.text_color %}
       color: {{ page.text_color }} !important;
       {% else %}
-      color: #37353E !important;
+      color: #fff !important;
       {% endif %}
     }
 
+    /* 스텝 기본/활성화 */
     .step {
       margin: 80vh 0;
-      opacity: 0.2;
-      transition: opacity 0.35s ease;
+      transform: translateY(30px);
+      opacity: 0;
     }
-
     .step.active {
       opacity: 1;
     }
 
+    /* 번호 표시 */
+    .step[data-step]::before {
+      content: attr(data-step) ". ";
+      font-weight: bold;
+      color: #ff9800;
+    }
+
+    /* 키워드 강조 */
     .highlight-keyword {
       font-weight: bold;
       color: #ff9800;
@@ -88,7 +95,6 @@ layout: none
     const img = document.getElementById("auto-img");
 
     if(steps.length > 0){
-      // 초기 활성화
       steps[0].classList.add("active");
       img.src = `/assets/images/{{ page.slug | default: page.title }}/` + steps[0].dataset.img;
     }
@@ -96,14 +102,15 @@ layout: none
     steps.forEach(step => {
       ScrollTrigger.create({
         trigger: step,
-        start: "top 60%",
-        end: "bottom 40%",
+        start: "top 70%",
+        end: "bottom 30%",
         onEnter: () => activateStep(step),
         onEnterBack: () => activateStep(step)
       });
     });
 
     function activateStep(step){
+      // 이미지 변경
       const newImg = step.dataset.img;
       if(img.src.indexOf(newImg) === -1){
         gsap.to(img, {opacity:0, duration:0.4, onComplete:()=>{
@@ -112,11 +119,14 @@ layout: none
         }});
       }
 
+      // 텍스트 활성화
       steps.forEach(s => s.classList.remove("active"));
       step.classList.add("active");
 
+      // 등장 애니메이션
       gsap.fromTo(step, {y:30, opacity:0}, {y:0, opacity:1, duration:0.6, ease:"power2.out"});
 
+      // 핵심 키워드 강조
       const kw = step.querySelectorAll(".highlight-keyword");
       kw.forEach(k => {
         gsap.fromTo(k, {scale:0.8, color:"#ff9800", opacity:0},
