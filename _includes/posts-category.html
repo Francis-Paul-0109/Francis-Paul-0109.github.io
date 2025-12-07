@@ -1,9 +1,9 @@
 {% comment %}
   posts-category.html
-  - include.taxonomy (ex: page.taxonomy) 사용
+  - include.taxonomy 사용 (ex: page.taxonomy)
   - post.hidden != true 필터 적용
   - front matter order 기준 정렬
-  - 글 앞 번호 자동 표시
+  - 글 번호 자동 표시 및 번호+제목 전체 링크 적용
   - archive-single.html과 호환
 {% endcomment %}
 
@@ -13,7 +13,10 @@
 <ol class="posts-list">
   {%- for post in posts_sorted -%}
     <li>
-      {% include archive-single.html post=post %}
+      <a href="{{ post.url | relative_url }}">
+        {{ post.order }}. {{ post.title }}
+      </a>
+      {% include archive-single.html post=post show_excerpt=false %}
     </li>
   {%- endfor -%}
 </ol>
