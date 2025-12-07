@@ -3,18 +3,17 @@
   - include.taxonomy 사용 (ex: page.taxonomy)
   - post.hidden != true 필터 적용
   - front matter order 기준 정렬
-  - 글 번호 제거, 제목 전체가 링크
-  - archive-single.html과 호환
+  - 글 번호 제거, 제목만 클릭 가능
+  - archive-single.html 미포함 (중복 방지)
 {% endcomment %}
 
 {%- assign posts = site.categories[include.taxonomy] | where_exp: "post", "post.hidden != true" -%}
 {%- assign posts_sorted = posts | sort: "order" -%}
 
-<div class="posts-list">
+<ul class="posts-list">
   {%- for post in posts_sorted -%}
-    <div class="post-item">
+    <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      {% include archive-single.html post=post show_excerpt=false %}
-    </div>
+    </li>
   {%- endfor -%}
-</div>
+</ul>
