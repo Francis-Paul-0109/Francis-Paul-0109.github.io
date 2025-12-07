@@ -6,11 +6,13 @@ author_profile: true
 ---
 
 {% comment %}
-  첫 번째 카테고리를 변수로 할당 후 include에 전달
-  Jekyll 3.x / GitHub Pages 호환
+  전체 카테고리 순회
+  - posts-category.html include 사용
+  - 각 카테고리별 글 목록 렌더링
 {% endcomment %}
 
-{% if page.categories and page.categories[0] %}
-  {% assign cat_name = page.categories[0] %}
+{% for category in site.categories %}
+  {% assign cat_name = category[0] %}
+  <h2>{{ cat_name | capitalize }}</h2>
   {% include posts-category.html taxonomy=cat_name %}
-{% endif %}
+{% endfor %}
