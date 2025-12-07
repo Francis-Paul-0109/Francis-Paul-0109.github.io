@@ -1,15 +1,16 @@
 ---
+layout: archive
 title: "Posts by Category"
-layout: categories
 permalink: /categories/
 author_profile: true
 ---
 
 {% comment %}
-  모든 카테고리에 대해 posts-category.html include
+  첫 번째 카테고리를 변수로 할당 후 include에 전달
+  Jekyll 3.x / GitHub Pages 호환
 {% endcomment %}
 
-{% for category in site.categories %}
-  <h2>{{ category[0] }}</h2>
-  {% include posts-category.html taxonomy=category[0] %}
-{% endfor %}
+{% if page.categories and page.categories[0] %}
+  {% assign cat_name = page.categories[0] %}
+  {% include posts-category.html taxonomy=cat_name %}
+{% endif %}
