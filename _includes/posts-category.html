@@ -3,13 +3,17 @@
   - include.taxonomy (ex: page.taxonomy) 사용
   - post.hidden != true 필터 적용
   - front matter order 기준 정렬
+  - 글 앞 번호 자동 표시
   - archive-single.html과 호환
 {% endcomment %}
 
 {%- assign posts = site.categories[include.taxonomy] | where_exp: "post", "post.hidden != true" -%}
-
 {%- assign posts_sorted = posts | sort: "order" -%}
 
-{%- for post in posts_sorted -%}
-  {% include archive-single.html post=post %}
-{%- endfor -%}
+<ol class="posts-list">
+  {%- for post in posts_sorted -%}
+    <li>
+      {% include archive-single.html post=post %}
+    </li>
+  {%- endfor -%}
+</ol>
