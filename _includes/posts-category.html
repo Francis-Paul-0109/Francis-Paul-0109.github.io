@@ -1,22 +1,19 @@
 {% comment %}
   posts-category.html
-  - include.taxonomy 사용 (ex: page.taxonomy)
+  - include.taxonomy 사용
   - post.hidden != true 필터 적용
-  - front matter order 기준 정렬
-  - 글 번호 자동 표시 및 번호+제목 전체 링크 적용
   - archive-single.html과 호환
+  - 글 번호 제거
 {% endcomment %}
 
 {%- assign posts = site.categories[include.taxonomy] | where_exp: "post", "post.hidden != true" -%}
 {%- assign posts_sorted = posts | sort: "order" -%}
 
-<ol class="posts-list">
+<div class="posts-list">
   {%- for post in posts_sorted -%}
-    <li>
-      <a href="{{ post.url | relative_url }}">
-        {{ post.order }}. {{ post.title }}
-      </a>
+    <div class="post-item">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       {% include archive-single.html post=post show_excerpt=false %}
-    </li>
+    </div>
   {%- endfor -%}
-</ol>
+</div>
