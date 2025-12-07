@@ -1,9 +1,10 @@
 {% comment %}
   posts-category.html
-  - include.taxonomy 사용
+  - include.taxonomy 사용 (ex: page.taxonomy)
   - post.hidden != true 필터 적용
+  - front matter order 기준 정렬
+  - 글 번호 제거, 제목 전체가 링크
   - archive-single.html과 호환
-  - 글 번호 제거
 {% endcomment %}
 
 {%- assign posts = site.categories[include.taxonomy] | where_exp: "post", "post.hidden != true" -%}
