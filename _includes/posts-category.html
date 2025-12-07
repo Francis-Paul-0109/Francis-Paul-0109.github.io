@@ -1,4 +1,6 @@
 {% assign posts = site.categories[include.taxonomy] | where_exp: "post", "post.hidden != true" %}
-{%- for post in posts -%}
+{% assign posts_sorted = posts | sort: 'order' %}  {# order 속성 기준으로 정렬 #}
+
+{%- for post in posts_sorted -%}
   {% include archive-single.html %}
 {%- endfor -%}
