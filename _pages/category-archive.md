@@ -5,10 +5,11 @@ permalink: /categories/
 author_profile: true
 ---
 
-{% assign categories_list = site.categories | sort %}
+{% comment %}
+  모든 카테고리에 대해 posts-category.html include
+{% endcomment %}
 
-{% for category in categories_list %}
-  {% assign current_category = category[0] %}
-  <h2>{{ current_category }}</h2>
-  {% include posts-category.html taxonomy=current_category %}
+{% for category in site.categories %}
+  <h2>{{ category[0] }}</h2>
+  {% include posts-category.html taxonomy=category[0] %}
 {% endfor %}
